@@ -10,7 +10,7 @@
 %
 % \fi
 %
-% \CheckSum{367}
+% \CheckSum{371}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -41,20 +41,24 @@
 % \changes{v1.0b}{1996/02/01}{\file{omake-sh.ins}, \file{omake-pl.ins}を
 %     \dst{}の変更にともなう変更をした}
 % \changes{v1.0c}{1997/01/23}{\LaTeX\ \textt{!<1996/12/01!>}に合わせて修正}
-% \changes{v1.0c_u00}{2011/05/07}{pLaTeX用からupLaTeX用に修正。}
+% \changes{v1.0c-u00}{2011/05/07}{p\LaTeX{}用からup\LaTeX{}用に修正。}
+% \changes{v1.0d}{2016/01/27}{\file{mkpldoc.sh}を改善。
+%     p\LaTeXe{}に付属するファイルの説明を更新}
+% \changes{v1.0e}{2016/02/16}{platexreleaseの説明を追加}
+% \changes{v1.0e-u00}{2016/04/06}{p\LaTeX{}の変更に追随。}
 % \fi
 %
 % \iffalse
 %<*driver>
 \NeedsTeXFormat{pLaTeX2e}
 % \fi
-\ProvidesFile{uplatex.dtx}[2011/05/07 v1.0c_u00 upLaTeX document file]
+\ProvidesFile{uplatex.dtx}[2016/04/06 v1.0e-u00 upLaTeX document file]
 % \iffalse
 \documentclass{jltxdoc}
 \usepackage{plext}
-\GetFileInfo{platex.dtx}
-\title{p\LaTeXe{}について}
-\author{Ken Nakano \& TTK}
+\GetFileInfo{uplatex.dtx}
+\title{up\LaTeXe{}について}
+\author{Ken Nakano \& Japanese \TeX\ Development Community \& TTK}
 \date{作成日：\filedate}
 \begin{document}
    \MakeShortVerb{\+}
@@ -292,21 +296,18 @@
 % 修正箇所には``\texttt{platex}''条件が付けられています。
 % 
 % p\LaTeXe{}に付属のクラスファイルは、次のとおりです。
+% \changes{v1.0d}{2016/01/27}{p\LaTeXe{}に付属するファイルの説明を更新}
 %
 % \begin{itemize}
-% \item jbook.cls,jarticle.cls,jreport.cls\par
+% \item jbook.cls, jarticle.cls, jreport.cls\par
 %   横組用の標準クラスファイル。\file{jclasses.dtx}から作成される。
 %
-% \item tbook.cls,tarticle.cls,treport.cls\par
+% \item tbook.cls, tarticle.cls, treport.cls\par
 %   縦組用の標準クラスファイル。\file{jclasses.dtx}から作成される。
 %
 % \item jltxdoc.cls\par
 %   \file{.dtx}ファイルを組版するためのクラスファイル。
 %   \file{jltxdoc.dtx}から作成される。
-%
-% \item jltxguid.cls\par
-%   \file{usrguide.tex}や\file{fntguide.tex}などを組版するための
-%   クラスファイル。
 % \end{itemize}
 %
 % また、p\LaTeXe{}に付属のパッケージファイルは、次のとおりです。
@@ -314,7 +315,7 @@
 % \begin{itemize}
 % \item oldpfont.sty\par
 %    p\LaTeX~2.09のフォントコマンドを提供するパッケージ。
-%    \file{oldpfont.dtx}から作成される。
+%    \file{pl209.dtx}から作成される。
 %
 % \item ptrace.sty\par
 %   \file{tracefnt.sty}で再定義された\NFSS2コマンドをp\LaTeXe{}用に
@@ -325,6 +326,10 @@
 %
 % \item plext.sty\par
 %    縦組用の拡張コマンドなどが定義されているファイル。
+%
+% \item nidanfloat.sty\par
+%   二段組時に段抜きのフロートをページ下部にも配置可能にする
+%   パッケージ。
 % \end{itemize}
 %
 %
@@ -340,13 +345,21 @@
 % これは、英語版の\LaTeX{}でも同じです。
 % 詳細は、\LaTeXe に付属の\file{usrguide.tex}を参照してください。
 %
-% 多くのクラスファイルやパッケージフィルはそのまま使えると思います。
+% 多くのクラスファイルやパッケージファイルはそのまま使えると思います。
 % ただし、それらがp\LaTeXe{}で拡張しているコマンドと同じ名前のコマンドを
 % 再定義している場合は、コマンドの拡張の仕方によってはエラーになることも
 % あります。用いようとしている、クラスファイルやパッケージファイルが
 % うまく動くかどうかを、完全に確かめる方法は残念ながらありません。
 % 一番簡単なのは、動かしてみることです。不幸にもうまく動かない場合は、
 % ログファイルや付属の文書ファイルを参考に原因を調べてください。
+%
+% \subsection{latexreleaseパッケージへの対応}
+% \changes{v1.0e}{2016/02/16}{platexreleaseの説明を追加}
+% \LaTeX\ \texttt{<2015/01/01>}で導入されたlatexreleaseパッケージを
+% もとに、新しいp\LaTeX{}ではplatexreleaseパッケージを用意しました。
+% platexreleaseパッケージを用いると、過去のp\LaTeX{}をエミュレート
+% することができます。詳細はplatexreleaseのドキュメントを参照して
+% ください。
 %
 %
 %
@@ -364,7 +377,7 @@
 % \cs{西暦}, \cs{和暦}に対する「読み」を付けるために必要です。
 %    \begin{macrocode}
 %<*pldoc>
-\begin{filecontents}{pldoc.dic}
+\begin{filecontents}{upldoc.dic}
 西暦    せいれき
 和暦    われき
 \end{filecontents}
@@ -441,25 +454,25 @@
 % \changes{v1.0c}{1997/01/29}{Rename pltpatch to plpatch.}
 %    \begin{macrocode}
 \begin{document}
- \title{The p\LaTeXe\ Sources}
- \author{Ken Nakano}
+ \title{The up\LaTeXe\ Sources}
+ \author{Ken Nakano \& Japanese \TeX\ Development Community \& TTK}
 
 % This command will be used to input the patch file
 % if that file exists.
 \newcommand{\includeltpatch}{%
-  \def\currentfile{plpatch.ltx}
-  \part{plpatch}
+  \def\currentfile{uplpatch.ltx}
+  \part{uplpatch}
   {\let\ttfamily\relax
     \xdef\filekey{\filekey, \thepart={\ttfamily\currentfile}}}%
   Things we did wrong\ldots
-  \IndexInput{plpatch.ltx}}
+  \IndexInput{uplpatch.ltx}}
 
-% Get the date from plvers.dtx
+% Get the date from uplvers.dtx
 \makeatletter
 \let\patchdate=\@empty
 \begingroup
    \def\ProvidesFile#1\pfmtversion#2{\date{#2}\endinput}
-   \input{plvers.dtx}
+   \input{uplvers.dtx}
 \global\let\X@date=\@date
 
 % Add the patch version if available.
@@ -467,7 +480,7 @@
     \xdef\X@date{#2}%
     \xdef\patchdate{#5}%
     \endinput}%
-   \InputIfFileExists{plpatch.ltx}
+   \InputIfFileExists{uplpatch.ltx}
     {\let\def\Xdef}{\global\let\includeltpatch\relax}
 \endgroup
 
@@ -477,7 +490,7 @@
     \edef\@date{\@date\space Patch level\patchdate}
   \fi
 \else
-   \@warning{plpatch.ltx does not match plvers.dtx!}
+   \@warning{uplpatch.ltx does not match uplvers.dtx!}
    \let\includeltpatch\relax
 \fi
 \makeatother
@@ -489,21 +502,21 @@
 \clearpage
 \pagenumbering{arabic}
 
-\DocInclude{plvers}   % pLaTeX version
+\DocInclude{uplvers}   % pLaTeX version
 
-\DocInclude{plfonts}  % NFSS2 commands
+\DocInclude{uplfonts}  % NFSS2 commands
 
-\DocInclude{plcore}   % kernel commands
+%\DocInclude{plcore}   % kernel commands
 
-\DocInclude{plext}    % external commands
+%\DocInclude{plext}    % external commands
 
-\DocInclude{pl209}    % 2.09 compatibility mode commands
+%\DocInclude{pl209}    % 2.09 compatibility mode commands
 
-\DocInclude{kinsoku}  % kinsoku parameter
+\DocInclude{ukinsoku}  % kinsoku parameter
 
-\DocInclude{jclasses} % Standard class
+\DocInclude{ujclasses} % Standard class
 
-\DocInclude{jltxdoc}  % dtx documents class
+%\DocInclude{jltxdoc}  % dtx documents class
 
 \includeltpatch       % patch file
 
@@ -569,9 +582,12 @@
 % 目次ファイルや索引ファイルなどを削除します。
 % \changes{v1.0c}{1997/01/23}{Don't copy gind.ist and gglo.ist from
 %        \$TEXMF/tex/latex2e/base directory.}
+% \changes{v1.0d}{2016/01/27}{\file{mkpldoc.sh}を改善}
 %    \begin{macrocode}
 %<*shprog>
-rm pldoc.toc pldoc.idx pldoc.glo
+for f in upldoc.toc upldoc.idx upldoc.glo ; do
+if [ -e $f ]; then rm $f; fi
+done
 %    \end{macrocode}
 % そして、\file{ltxdoc.cfg}を空にします。
 % このファイルは、\file{jltxdoc.cls}の定義を変更するものですが、
@@ -581,7 +597,7 @@ echo "" > ltxdoc.cfg
 %    \end{macrocode}
 % そして、\file{pldoc.tex}を処理します。
 %    \begin{macrocode}
-platex pldoc.tex
+uplatex upldoc.tex
 %    \end{macrocode}
 % 索引と変更履歴を作成します。
 % このスクリプトでは、変更履歴や索引を生成するのにmendexプログラムを用いて
@@ -597,8 +613,8 @@ platex pldoc.tex
 % |-f|は、項目に``読み''がなくてもエラーとしないオプションです。
 % makeindexコマンドには、このオプションがありません。
 %    \begin{macrocode}
-mendex -s gind.ist -d pldoc.dic -o pldoc.ind pldoc.idx
-mendex -f -s gglo.ist -o pldoc.gls pldoc.glo
+mendex -s gind.ist -d upldoc.dic -o upldoc.ind upldoc.idx
+mendex -f -s gglo.ist -o upldoc.gls upldoc.glo
 %    \end{macrocode}
 % \file{ltxdoc.cfg}の内容を|\includeonly{}|にし、\file{pldoc.tex}を処理します。
 % このコマンドは、引数に指定されたファイルだけを``|\include|''するための
@@ -609,14 +625,14 @@ mendex -f -s gglo.ist -o pldoc.gls pldoc.glo
 % この処理は、主に、これらでエラーが出るかどうかの確認です。
 %    \begin{macrocode}
 echo "\includeonly{}" > ltxdoc.cfg
-platex pldoc.tex
+uplatex upldoc.tex
 %    \end{macrocode}
 % 最後に、再び\file{ltxdoc.cfg}を空にして、\file{pldoc.tex}を処理をします。
 % 本文を１ページから開始していますので、この後、もう一度処理をする
 % 必要はありません。
 %    \begin{macrocode}
 echo "" > ltxdoc.cfg
-platex pldoc.tex
+uplatex upldoc.tex
 # EOT
 %</shprog>
 %    \end{macrocode}
@@ -804,8 +820,8 @@ exit;
 % を指定します。
 %    \begin{macrocode}
 \generate{
-   \file{dstcheck.pl}{\from{platex.dtx}{plprog}}
-   \file{mkpldoc.sh}{\from{platex.dtx}{shprog}}
+   \file{dstcheck.pl}{\from{uplatex.dtx}{plprog}}
+   \file{mkpldoc.sh}{\from{uplatex.dtx}{shprog}}
 }
 \endbatchfile
 %</Xins>
