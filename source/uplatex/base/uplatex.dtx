@@ -31,8 +31,16 @@
 % \setcounter{StandardModuleDepth}{1}
 % \def\chuui#1{\par\vskip.5\baselineskip
 %   \noindent\bfseries{注意：}\par
-%   \noindent\bgroup\bf#1}
+%   \noindent\bgroup\gtfamily\sffamily#1}
 % \def\endchuui{\egroup\vskip.5\baselineskip}
+% \def\pTeX{p\kern-.15em\TeX}
+% \def\epTeX{$\varepsilon$-\pTeX}
+% \def\pLaTeX{p\kern-.05em\LaTeX}
+% \def\pLaTeXe{p\kern-.05em\LaTeXe}
+% \def\upTeX{u\pTeX}
+% \def\eupTeX{$\varepsilon$-\upTeX}
+% \def\upLaTeX{u\pLaTeX}
+% \def\upLaTeXe{u\pLaTeXe}
 % \StopEventually{}
 %
 % \iffalse
@@ -46,13 +54,14 @@
 %     p\LaTeXe{}に付属するファイルの説明を更新}
 % \changes{v1.0e}{2016/02/16}{platexreleaseの説明を追加}
 % \changes{v1.0e-u00}{2016/04/06}{p\LaTeX{}の変更に追随。}
+% \changes{v1.0f-u00}{2016/04/12}{ドキュメントを更新}
 % \fi
 %
 % \iffalse
 %<*driver>
 \NeedsTeXFormat{pLaTeX2e}
 % \fi
-\ProvidesFile{uplatex.dtx}[2016/04/06 v1.0e-u00 upLaTeX document file]
+\ProvidesFile{uplatex.dtx}[2016/04/12 v1.0f-u00 upLaTeX document file]
 % \iffalse
 \documentclass{jltxdoc}
 \usepackage{plext}
@@ -68,6 +77,36 @@
 %</driver>
 % \fi
 %
+%
+% \begin{chuui}
+% これは、アスキーのオリジナル版からforkしたコミュニティ版\pLaTeXe{}の
+% 付属文書を\upLaTeXe{}用に書き換えたものですが、内容はソースコード部分
+% を除いて元の\pLaTeXe{}の文書と全く同一です。
+% \end{chuui}
+%
+% アスキー\pTeX{}には、高品質の日本語組版ソフトウェアとしてデファクト
+% スタンダードの地位にあるといえます。しかし、
+% (1) 直接使える文字集合が原則的にJIS X 0208（JIS第1,2水準）の範囲に限定
+% されていること、
+% (2) 8bitの非英語欧文との親和性が高いとは言えないこと、
+% (3) \pTeX{}の利用が日本語に限られ、中国語・韓国語との混植への利用が
+% 進んでいないこと、といった弱点がありました。
+%
+% これらの弱点を克服するため、\pTeX{}の内部コードをUnicode化した拡張版
+% が\upTeX{}です。また、\upTeX{}上で用いるUnicode版\pLaTeX{}が\upLaTeX{}で
+% す\footnote{\texttt{http://www.t-lab.opal.ne.jp/tex/uptex.html}}。
+% 現在の\upLaTeX{}は、日本語\TeX{}開発コミュニティが配布しているコミュニティ
+% 版\pLaTeX{}\footnote{\texttt{https://github.com/texjporg/ptex-texmf}}を
+% ベースにしています。開発中の版は\pLaTeX{}と同様に、GitHubの
+% リポジトリ\footnote{\texttt{https://github.com/texjporg/uptex-texmf}}で
+% 管理しています。
+%
+% より詳細な\upTeX{}や\upLaTeX{}の情報は、
+% それぞれ\file{README\_uplatex.txt}や\file{README\_uptex.txt}などの
+% テキストファイルを参照してください。
+%
+%
+% \clearpage
 %
 % \section{概要}\label{platex:intro}
 % この文書は、p\LaTeXe{}の概要を示していますが、使い方のガイドでは
@@ -358,8 +397,8 @@
 % \LaTeX\ \texttt{<2015/01/01>}で導入されたlatexreleaseパッケージを
 % もとに、新しいp\LaTeX{}ではplatexreleaseパッケージを用意しました。
 % platexreleaseパッケージを用いると、過去のp\LaTeX{}をエミュレート
-% することができます。詳細はplatexreleaseのドキュメントを参照して
-% ください。
+% したり、フォーマットを作り直すことなく新しいp\LaTeX{}を試したりする
+% ことができます。詳細はplatexreleaseのドキュメントを参照してください。
 %
 %
 %
