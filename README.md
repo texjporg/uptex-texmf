@@ -1,6 +1,6 @@
 # uptex-texmf
 
-The uptex-texmf tree (community edition) was divided into four repository:
+The uptex-texmf tree (community edition) was divided into three repository:
 
 - [uptex-base](https://github.com/texjporg/uptex-base)
 - [uptex-fonts](https://github.com/texjporg/uptex-fonts)
